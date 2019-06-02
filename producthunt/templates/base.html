@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>Product Hunt</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="data:image/png;base64,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" height=30 width=30 class="d-inline-block align-top" />
+      Product Hunt
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+{#              if sucess Full login#}
+          <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
+          <form id="logout" method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden" />
+          </form>
+          {% else %}
+          <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+          {% endif %}
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    {% block content %}
+    {% endblock %}
+
+  </div>
+
+  <footer class="text-muted">
+    <div class="container text-center">
+      <p>Have a happy {% now "Y" %}</p>
+      </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
